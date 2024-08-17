@@ -2,7 +2,6 @@
 
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useAuth } from "../utils/useAuth";
 import { useContext, useState } from "react";
 import CartContext from "../utils/CartContext";
@@ -12,13 +11,15 @@ const Header = () => {
 
     const { isLoggedIn } = useAuth();
 
-    const router = useRouter();
-
     const totalItems = cartItems
         .map((cartItem) => cartItem.quantity)
         .reduce((acc, curr) => acc + curr, 0);
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+        setIsOpen(false);
+    };
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
@@ -99,19 +100,27 @@ const Header = () => {
                         id="navbar-default">
                         <ul className="opacity-85 bg-black text-white md:text-black font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-graydark-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
                             <li className="block py-2 px-3 mt-2 rounded md:bg-transparent hover:text-blue-700 md:p-0">
-                                <Link href="/">Home</Link>
+                                <Link href="/" onClick={handleToggle}>
+                                    Home
+                                </Link>
                             </li>
                             <li className="block py-2 px-3 mt-2 rounded md:bg-transparent hover:text-blue-700 md:p-0">
-                                <Link href="/contact">Contact Us</Link>
+                                <Link href="/contact" onClick={handleToggle}>
+                                    Contact Us
+                                </Link>
                             </li>
                             <li className="block py-2 px-3 mt-2 rounded md:bg-transparent hover:text-blue-700 md:p-0">
-                                <Link href="/cart">Cart ({totalItems})</Link>
+                                <Link href="/cart" onClick={handleToggle}>
+                                    Cart ({totalItems})
+                                </Link>
                             </li>
                             {!isLoggedIn ? (
                                 <button
                                     type="button"
                                     className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
-                                    <Link href="/signin">SignIn</Link>
+                                    <Link href="/signin" onClick={handleToggle}>
+                                        SignIn
+                                    </Link>
                                 </button>
                             ) : (
                                 <button
