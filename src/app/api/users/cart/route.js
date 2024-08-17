@@ -9,7 +9,7 @@ export async function GET(request) {
         if (!cookieHeader) {
             return NextResponse.json(
                 { error: "Unauthorized" },
-                { status: 401 }
+                { status: 200 }
             );
         }
 
@@ -18,7 +18,7 @@ export async function GET(request) {
         if (!decodedToken) {
             return NextResponse.json(
                 { error: "Invalid token" },
-                { status: 401 }
+                { status: 200 }
             );
         }
 
