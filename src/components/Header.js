@@ -117,7 +117,7 @@ const Header = () => {
                             {!isLoggedIn ? (
                                 <button
                                     type="button"
-                                    className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
+                                    className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm mt-4 w-1/2 px-3 py-2 focus:outline-none">
                                     <Link href="/signin" onClick={handleToggle}>
                                         SignIn
                                     </Link>
@@ -126,7 +126,7 @@ const Header = () => {
                                 <button
                                     type="button"
                                     onClick={handleLogout}
-                                    className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
+                                    className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm mt-4 w-1/2 px-3 py-2 focus:outline-none">
                                     Logout
                                 </button>
                             )}

@@ -97,7 +97,7 @@ const CartSummary = () => {
     };
 
     return (
-        <div className="sm:w-1/2 xl:w-2/5 bg-white mx-6 sm:mx-0 sm:mr-[4%] xl:mr-[8.5%] cursor-pointer shadow-lg my-4 p-6 border border-gray-200 rounded-xl hover:shadow-2xl transition-shadow duration-200">
+        <div className="sm:w-1/2 xl:w-2/5 bg-white mx-6 sm:mx-0 sm:mr-[4%] xl:mr-[8.5%] cursor-pointer shadow-lg my-4 p-4 border border-gray-200 rounded-xl hover:shadow-2xl transition-shadow duration-200">
             <div>
                 <h2 className="text-xl text-center font-bold mb-[6%]">
                     Cart Summary
